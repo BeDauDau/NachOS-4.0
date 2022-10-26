@@ -112,7 +112,7 @@ ifeq ($(hosttype),unknown)
 PROGRAMS = unknownhost
 else
 # change this if you create a new test program!
-PROGRAMS = add halt shell matmult sort segments num_io char_io random str_io ascii bubblesort help
+PROGRAMS = add halt shell matmult sort segments num character random string ascii sortNumber help
 endif
 
 all: $(PROGRAMS)
@@ -157,17 +157,17 @@ matmult: matmult.o start.o
 	$(LD) $(LDFLAGS) start.o matmult.o -o matmult.coff
 	$(COFF2NOFF) matmult.coff matmult
 
-num_io.o: num_io.c
-	$(CC) $(CFLAGS) -c num_io.c
-num_io: num_io.o start.o
-	$(LD) $(LDFLAGS) start.o num_io.o -o num_io.coff
-	$(COFF2NOFF) num_io.coff num_io
+num.o: num.c
+	$(CC) $(CFLAGS) -c num.c
+num: num.o start.o
+	$(LD) $(LDFLAGS) start.o num.o -o num.coff
+	$(COFF2NOFF) num.coff num
 
-char_io.o: char_io.c
-	$(CC) $(CFLAGS) -c char_io.c
-char_io: char_io.o start.o
-	$(LD) $(LDFLAGS) start.o char_io.o -o char_io.coff
-	$(COFF2NOFF) char_io.coff char_io
+character.o: character.c
+	$(CC) $(CFLAGS) -c character.c
+character: character.o start.o
+	$(LD) $(LDFLAGS) start.o character.o -o character.coff
+	$(COFF2NOFF) character.coff character
 
 random.o: random.c
 	$(CC) $(CFLAGS) -c random.c
@@ -175,11 +175,11 @@ random: random.o start.o
 	$(LD) $(LDFLAGS) start.o random.o -o random.coff
 	$(COFF2NOFF) random.coff random
 
-str_io.o: str_io.c
-	$(CC) $(CFLAGS) -c str_io.c
-str_io: str_io.o start.o
-	$(LD) $(LDFLAGS) start.o str_io.o -o str_io.coff
-	$(COFF2NOFF) str_io.coff str_io
+string.o: string.c
+	$(CC) $(CFLAGS) -c string.c
+string: string.o start.o
+	$(LD) $(LDFLAGS) start.o string.o -o string.coff
+	$(COFF2NOFF) string.coff string
 
 ascii.o: ascii.c
 	$(CC) $(CFLAGS) -c ascii.c
@@ -187,11 +187,11 @@ ascii: ascii.o start.o
 	$(LD) $(LDFLAGS) start.o ascii.o -o ascii.coff
 	$(COFF2NOFF) ascii.coff ascii
 
-bubblesort.o: bubblesort.c
-	$(CC) $(CFLAGS) -c bubblesort.c
-bubblesort: bubblesort.o start.o
-	$(LD) $(LDFLAGS) start.o bubblesort.o -o bubblesort.coff
-	$(COFF2NOFF) bubblesort.coff bubblesort
+sortNumber.o: sortNumber.c
+	$(CC) $(CFLAGS) -c sortNumber.c
+sortNumber: sortNumber.o start.o
+	$(LD) $(LDFLAGS) start.o sortNumber.o -o sortNumber.coff
+	$(COFF2NOFF) sortNumber.coff sortNumber
 
 help.o: help.c
 	$(CC) $(CFLAGS) -c help.c

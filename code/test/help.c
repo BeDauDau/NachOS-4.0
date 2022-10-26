@@ -16,10 +16,6 @@ int main()
   PrintString("- Su dung thuat toan bubble sort de sap xep mang theo chieu tang dan hoac giam dan do nguoi dung chon.\n\n");
 
   PrintString("Mo ta van tat ve chuong tring ASCII: in ra bang ma ASCII.\n\n ");
-
-
-
-
   
   Halt();
   /* not reached */
